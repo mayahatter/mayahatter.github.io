@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Inner Page - Gp Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+
+  <!-- =======================================================
+  * Template Name: Gp
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  
+  
+  <style>
+  html, body {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #1d1f20;
+  color: #aaa;
+  font-size: 18px;
+  line-height: 1.4;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#video-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+  right: 0;
+  bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	overflow: hidden;
+  
+  .touch & {
+    background: url(http://xtianmiller.com/dist/videos/winter_creek.jpg) no-repeat center;
+    background-size: cover;
+  }
+}
+video {
+	width: 100%;
+  height: 100%;
+  
+  .touch & {
+    display: none;
+  }
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 20;
+	background-color: rgba(0,0,0,0.7);
+  padding-left: 6%;
+  padding-right: 6%;
+  display: table;
+  
+  &__inner {
+    width: 100%;
+    height: auto;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  h2 {
+    max-width: 40em;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.3;
+    margin: 0 auto;
+  }
+  
+  p {
+    padding-top: 1em;
+    max-width: 40em;
+    margin: 0 auto;
+  }
+  
+  a.btn {
+    display: inline-block;
+    margin-top: 25px;
+    border: 1px solid #00c1bb;
+    color: #00c1bb;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  a.btn span {
+    display: inline-block;
+    padding: 6px 40px;
+    transition: transform 0.4s;
+  }
+
+  a.btn .row2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(100%);
+  }
+
+  a.btn:hover .row1 {
+    transform: translateY(-100%);
+  }
+
+  a.btn:hover .row2 {
+    transform: translateY(0);
+  }
+}
+  </style>
+  
+</head>
+
+<body>
+
+  
+  
+  <div id="video-container">
+  <video preload="auto" autoplay loop muted width="1440" height="810">
+    <source src="https://vectorform.com/wp-content/themes/vectorform/videos/about.mp4" type="video/mp4">
+      <source src="https://vectorform.com/wp-content/themes/vectorform/videos/about.webm" type="video/webm">
+    <source src="https://vectorform.com/wp-content/themes/vectorform/videos/about.ogv" type="video/ogv">
+  </video>
+</div>
+<div class="overlay">
+  <div class="overlay__inner">
+    <h2>Fullscreen HTML5 Background Video</h2>
+    <p>
+      Utilizes Javascript to create cover effect and updates on resize. Modernizr determines an image fallback for touch devices.
+    </p>
+  </div>
+</div>
+
+
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
