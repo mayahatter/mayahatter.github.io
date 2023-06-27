@@ -36,7 +36,7 @@
   --color-primary-hover: #6776f4;
   --color-text-heading: #012970;
   --color-icons: #0245bc;
-  
+  --color-secondary: #ff5e16;
 }
 
 body {
@@ -72,6 +72,14 @@ section {
   overflow: hidden;
 }
 
+.section-bg {
+  background: linear-gradient(to right, rgba(197, 215, 235, 0.35), rgba(241, 245, 241, 0.95));
+  /*margin: 10rem 0 0 0;*/
+  padding: 0! important;
+  width: 100%;
+  height: 100%;
+}
+
 .section-header {
   text-align: center;
   padding-bottom: 40px;
@@ -83,7 +91,16 @@ section {
   font-weight: 700;
   margin: 0;
   color: var(--color-primary);
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
+
+
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.section-header h2 span {
+  color: var(--color-secondary);
 }
 
 .section-header p {
@@ -93,6 +110,7 @@ section {
   line-height: 42px;
   font-weight: 700;
   color: var(--color-text-heading);
+  font-family: "Co Headline Corp", sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -491,6 +509,13 @@ section {
   font-size: 26px;
 }
 
+.hero .slogan {
+  margin: 15px 0 0 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-heading);
+}
+
 .hero .btn-get-started {
   margin-top: 30px;
   line-height: 0;
@@ -548,6 +573,10 @@ section {
 @media (max-width: 768px) {
   .hero {
     text-align: center;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 0px;
+    margin: 0px;
   }
 
   .hero h1 {
@@ -575,10 +604,16 @@ section {
 }
 
 .about h3 {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 500;
   color: var(--color-primary);
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
+}
+
+.about h3 span {
+  font-size: 28px;
+  color: var(--color-secondary);
+  /*text-transform: uppercase;*/
 }
 
 .about h2 {
@@ -630,6 +665,7 @@ section {
   height: 100%;
 }
 
+.values .box svg,
 .values .box img {
   padding: 30px 50px;
   transition: 0.5s;
@@ -692,10 +728,18 @@ section {
 # Features
 --------------------------------------------------------------*/
 .features .feature-box {
-  padding: 24px 20px;
+  /*padding: 24px 20px;*/
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
   transition: 0.3s;
   height: 100%;
+
+
+  text-align:center;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(0.25turn, #ecf3ff, var(--color-text-heading));
+  border-image-slice: 1;
+  width:100%;
+
 }
 
 .features .feature-box h3 {
@@ -705,7 +749,28 @@ section {
   margin: 0;
 }
 
-.features .feature-box i {
+@media (max-width: 992px) {
+  .features .feature-box h3 {
+    margin-right: 36px;
+  }
+}
+
+.features .feature-box .number {
+  position: absolute;
+  bottom: 0;
+  right: 1px;
+  margin: 0;
+  padding: 0;
+  font-size: 80px;
+  line-height: 56px;
+  font-weight: 100;
+  color: var(--color-text-heading);
+  font-family: "Co Headline Corp", sans-serif;
+}
+
+
+.features .feature-box i,
+.features .feature-box svg {
   line-height: 0;
   background: #ecf3ff;
   padding: 4px;
@@ -713,6 +778,7 @@ section {
   font-size: 24px;
   border-radius: 3px;
   transition: 0.3s;
+  min-width: 60px;
 }
 
 .features .feature-box:hover i {
@@ -773,7 +839,8 @@ section {
 }
 
 .features .feature-icons {
-  margin-top: 120px;
+  /*margin-top: 120px;*/
+  margin-top: 40px;
 }
 
 .features .feature-icons h3 {
@@ -2244,6 +2311,34 @@ section {
 }
 
 /*--------------------------------------------------------------
+# CTA
+--------------------------------------------------------------*/
+.cta {
+  background: #f6f9ff;
+  padding: 30px 0 30px 0;
+  font-size: 14px;
+  margin: 30px 0;
+}
+
+.cta .cta-title {
+  font-size: 26px;
+    color: var(--color-secondary);
+    font-weight: 400;
+    margin: 0;
+}
+
+.cta .icon-detersivo {
+  width: 60px;
+  margin-right: 20px;
+}
+
+.cta .cta-subtitle {
+  font-size: 32px;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin: 0;
+}
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 .footer {
@@ -2459,32 +2554,47 @@ section {
     overflow: hidden;
 }
 .wave{
-  position:relative;
+  /*position:relative;
   width:100%;
   height:100%;
   background:#4973ff;
   border-radius:50%;
-  box-shadow:inset 0 0 50px rgba(0,0,0,.5);
+  box-shadow:inset 0 0 50px rgba(0,0,0,.5);*/
+
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
 }
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
 .wave:before,.wave:after{
-  content:'';
+  /*content:'';
   position:absolute;
   width:200%;
   height:200%;
   top:0;
   left:50%;
   transform:translate(-50%,-75%);
-  background:#000;
+  background:#000;*/
 }
 .wave:before{
-  border-radius:45%;
+  /*border-radius:45%;
   background:rgba(255,255,255,1);
-  animation:animate 5s linear infinite;
+  animation:animate 5s linear infinite;*/
 }
 .wave:after{
-  border-radius:40%;
+  /*border-radius:40%;
   background:rgba(255,255,255,.5);
-  animation:animate 10s linear infinite;
+  animation:animate 10s linear infinite;*/
 }
 @keyframes animate{
   0%{
@@ -2492,6 +2602,24 @@ section {
   }
   100%{
      transform:translate(-50%,-75%) rotate(360deg);
+  }
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
   }
 }
 
