@@ -297,61 +297,72 @@
    */
   new PureCounter();
   
-  
+
+
+/*
+
+  let bubbles = document.querySelectorAll(".bubble2");
+
+gsap.to(bubbles, {
+	opacity: "random(0, 0.5)",
+	top: 10,
+	x: "random(-50,50)",
+	scale: "random(.2, 1.5)",
+	duration: 2,
+	stagger: {
+		amount: 10,
+		each: 1,
+		repeat: -1
+	}
+});
+
+gsap.to(".wave2", {
+	duration: 30,
+	ease: "none",
+	right: 0,
+	yoyo: true,
+	repeat: -1
+});
+  */
 
 })();
 
+/*
+function initialize() {
 
-document.addEventListener("DOMContentLoaded", function () {
+  //console.log("LOADED");
 
-				async function getThumbnailForVideo(videoUrl) {
-					console.log("getThumbnailForVideo: " + videoUrl);
-				  const video = document.createElement("video");
-				  const canvas = document.createElement("canvas");
-				  video.style.display = "none";
-				  canvas.style.display = "none";
-
-				  // Trigger video load
-				  await new Promise((resolve, reject) => {
-					video.addEventListener("loadedmetadata", () => {
-						onsole.log(" loadedmetadata INIZ ");
-					  video.width = video.videoWidth;
-					  video.height = video.videoHeight;
-					  canvas.width = video.videoWidth;
-					  canvas.height = video.videoHeight;
-					  // Seek the video to 25%
-					  video.currentTime = video.duration * 0.25;
-					  onsole.log(" loadedmetadata END ");
-					});
-					video.addEventListener("seeked", () => resolve());
-					video.src = videoUrl;
-				  });
-
-				  // Draw the thumbnailz
-				  canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-				  const imageUrl = canvas.toDataURL("image/png");
-				  return imageUrl;
+  var map = new google.maps.Map(document.getElementById('bolle-blu-map'), {
+		center: {lat: 44.4990967, lng: 11.3076936},
+		zoom: 13,
+	});
+	if(map) {
+		var locations = [
+		  ['<b>BolleBlu Pratello</b><br>Via del Pratello, 97D<br>40122 Bologna BO', 44.4931339, 11.3419908, 1, "https://topsandbeach.it/wp-content/themes/topsand/assets/img/map-pin-icon.png"],
+		  ['<b>BolleBlu Battindarno</b><br>Via Battindarno, 170D<br>40133 Bologna BO', 44.5039765, 11.297813, 2, "https://topsandbeach.it/wp-content/themes/topsand/assets/img/map-pin-icon.png"]
+		];
+		var infowindow = new google.maps.InfoWindow();
+		var marker, i;
+		for (i = 0; i < locations.length; i++) {
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				icon: locations[i][4],
+				map: map
+			});
+			google.maps.event.addListener(marker, 'click', (function (marker, i) {
+				return function () {
+					infowindow.setContent(locations[i][0]);
+					infowindow.open(map, marker);
 				}
+			})(marker, i));
+		}	
+	}
 
-				const videoitems = document.querySelectorAll('.lightbox-item');
-				videoitems.forEach((videoitem) => {
-					
-					let fileUrl = videoitem.getAttribute("href")
-					
-					fetch(fileUrl)
-						  .then(res => res.blob()) // Gets the response and returns it as a blob
-						  .then(blob => {
-							// Here's where you get access to the blob
-							// And you can use it for whatever you want
-							// Like calling ref().put(blob)
-							const fileUrl2 = URL.createObjectURL(blob);
-							const thumbUrl =  getThumbnailForVideo(fileUrl2);
-							videoitem.firstChild.src = thumbUrl;
-						});
-						
-					});
-					
-	
-	}, false);
 
+}*/
+
+
+//window.addEventListener('load', initialize)
+//initialize();
 	
+  

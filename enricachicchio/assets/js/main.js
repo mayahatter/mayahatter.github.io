@@ -293,100 +293,68 @@
 
 
 
-function debounce(func, wait, immediate) {
 
-  // Debounce
-  // http://davidwalsh.name/javascript-debounce-function
-  
-  console.log("debounce");
 
-  var timeout;
-  return function() {
-    var context = this,
-      args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) {
-        func.apply(context, args);
+      const calcPaths = (totalDur) => {
+        // unset 'animated' class to body which will reset the animation
+        document.body.classList.add('animated')
+      
+        // get all SVG elements - lines and dots
+        const paths = document.querySelectorAll('.autograph__path')
+      
+      console.log("PATHS: " + paths.length);
+
+        // prepare path length variable
+        let len = 0
+      
+        // prepare animation delay length variable
+        let delay = 0
+      
+        // escape if no elements found
+        if (!paths.length) {
+          return false
+        }
+      
+        // set duration in seconds of animation to default if not set
+        const totalDuration = totalDur || 7
+      
+        // calculate the full path length
+        paths.forEach((path) => {
+          const totalLen = path.getTotalLength()
+          len += totalLen
+        })
+      
+        paths.forEach((path) => {
+
+          console.log("foreach PATH: " + path);
+
+
+          const pathElem = path
+      
+          // get current path length
+          const totalLen = path.getTotalLength()
+      
+          // calculate current animation duration
+          const duration = totalLen / len * totalDuration
+      
+          // set animation duration and delay
+          pathElem.style.animationDuration = `${duration < 0.1 ? 0.1 : duration}s`
+          pathElem.style.animationDelay = `${delay}s`
+      
+          // set dash array and offset to path length - this is how you hide the line
+          pathElem.setAttribute('stroke-dasharray', totalLen)
+          pathElem.setAttribute('stroke-dashoffset', totalLen)
+      
+          // set delay for the next path - added .2 seconds to make it more realistic
+          delay += duration + 0.2
+        })
+      
+        // set 'animated' class to body which will start the animation
+        document.body.classList.add('animated')
+        return true
       }
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) {
-      func.apply(context, args);
-    }
-  };
-}
+      calcPaths(2)
 
-var htmlTag = document.getElementsByTagName('html')[0];
-var videoContainer = document.querySelector('#video-container');
-var videoElem = document.querySelector('#video-container video');
-
-var minW = 320; // Minimum video width allowed
-var vidWOrig; // Original video dimensions
-var vidHOrig;
-
-vidWOrig = videoElem.getAttribute('width');
-vidHOrig = videoElem.getAttribute('height');
-
-var videoCover = function() {
-  console.log("videoCover");
-
-  var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-  // Set the video viewport to the window size
-
-  videoContainer.style.width = winWidth + 'px';
-  videoContainer.style.height = winHeight + 'px';
-
-  // Use largest scale factor of horizontal/vertical
-  var scaleH = winWidth / vidWOrig;
-  var scaleV = winHeight / vidHOrig;
-  var scale = scaleH > scaleV ? scaleH : scaleV;
-
-  // Don't allow scaled width < minimum video width
-  if (scale * vidWOrig < minW) {
-    scale = minW / vidWOrig;
-  }
-
-  // Scale the video
-  var videoNewWidth = scale * vidWOrig;
-  var videoNewHeight = scale * vidHOrig;
-
-  videoElem.style.width = videoNewWidth + 'px';
-  videoElem.style.height = videoNewHeight + 'px';
-
-  // Center it by scrolling the video viewport
-  videoContainer.scrollLeft = (videoNewWidth - winWidth) / 2;
-  videoContainer.scrollTop = (videoNewHeight - winHeight) / 2;
-
-};
-
-  videoCover();
-
-  // Adjust on resize
-  var updateVideo = debounce(function() {
-    videoCover();
-  }, 100);
-
-  window.addEventListener('resize', updateVideo);
-    console.log("after evenbtlis");
-
-
-
-var typed = new Typed('#typed', {
-				  stringsElement: '#typed-strings',
-				  smartBackspace: true, // Default value,
-				  startDelay: 0,
-				  typeSpeed: 30,
-				loop: true,
-				
-				backSpeed: 30,
-				backDelay: 1000,
-	
-			});
 
 })()
 
