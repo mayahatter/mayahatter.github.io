@@ -158,7 +158,10 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(0, 0, 0, 0.8);
+  /*background: rgba(0, 0, 0, 0.8);*/
+  background: rgba(255, 255, 255, 1);
+  padding: 15px 0;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
 }
 
 #header .logo {
@@ -182,6 +185,16 @@ h6 {
 #header .logo img {
   max-height: 40px;
 }
+
+#header.header-scrolled .navbar a {
+  color: rgb(80, 80, 80);
+}
+
+#header.header-scrolled .navbar a.active {
+  color: #c2a18a;
+}
+
+
 
 /*--------------------------------------------------------------
 #  Get Startet Button
@@ -653,6 +666,12 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
+.about-area {
+  background-color: #292b37;
+}
+
+
 .about .content h3 {
   font-weight: 700;
   font-size: 28px;
@@ -727,10 +746,10 @@ section {
 	position: relative;
 	margin: 0;
 	padding: .5rem;
-	padding-left: 2.5rem;
+	padding-left: 4.5rem;
 	margin-bottom: 2.5rem;
 	font-family: "Playfair Display";
-	font-size: 36px;
+	font-size: 28px;
 	font-style: normal;
 	font-weight: 400;
 	letter-spacing: 0.36px;
@@ -743,7 +762,7 @@ section {
 .about-content blockquote:after {
 	position: absolute;
 	color: #f1efe6;
-	font-size: 8rem;
+	font-size: 5rem;
 	width: 4rem;
 	height: 4rem;
 	color: rgb(80, 80, 80);
@@ -753,15 +772,15 @@ section {
 	content: '“';
 	/*left: -5rem;
 	top: -2rem;*/
-	left: -2rem;
+	left: 1rem;
 }
 
 .about-content blockquote:after {
 	content: '”';
 	/*right: -5rem;
 	bottom: 1rem;*/
-	right: 3rem;
-    bottom: -4rem;
+	right: 6rem;
+    bottom: -3rem;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
