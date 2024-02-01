@@ -220,7 +220,6 @@ h4,
 h5,
 h6 {
   color: #1f1b1b;
-  font-family: "Anton", sans-serif;
 }
 
 /* line 140, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_common.scss */
@@ -2683,7 +2682,8 @@ ul {
   /* line 2, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_banner.scss */
   .banner_part {
     height: 100vh;
-    background-position: top 0 right -540px;
+    background: url(../img/banner_bg_1_sm.jpg);
+    background-position: top center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -2694,7 +2694,10 @@ ul {
 
   /* line 2, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_banner.scss */
   .banner_part {
-    height: 700px;
+    height: 100vh;
+    background-position: top 0 right -540px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     background-size: cover;
   }
 }
@@ -2861,8 +2864,18 @@ font-weight: 800;
     z-index: 3;
     position: relative;
     letter-spacing: 3px;
-    color: #014b7a;
+    color: #fff;
 }
+
+@media only screen and (max-width: 768px)  {
+
+  .banner_part .banner_text p {
+    color: #014b7a;
+  }
+
+}
+
+
 
 /* line 104, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_banner.scss */
 .banner_part .banner_text h5 {
@@ -2892,7 +2905,7 @@ font-weight: 800;
 
   
   font-weight: 800;
-  color: #444444;
+  color: #fff;
   font-size: 8vw;
   line-height: 1.2;
   display: block;
@@ -2904,7 +2917,7 @@ font-weight: 800;
   -webkit-text-fill-color: transparent;
   /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: #fff;
   display: block;
 }
 
@@ -2939,6 +2952,11 @@ font-weight: 800;
     margin-bottom: 25px;
     line-height: 1.3;
     display: inline-block;
+    color: black
+  }
+
+  .banner_part .banner_text h1 span {
+    -webkit-text-stroke-color: black;
   }
 
   /* line 140, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_banner.scss */
@@ -3290,6 +3308,12 @@ font-weight: 800;
   z-index: 1;
 }
 
+.feature_part .single_feature_part svg {
+  max-width: 125px;
+  width: 125px;
+  height: auto;
+}
+
 /* line 35, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_feature.scss */
 .feature_part .single_feature_part:after {
   position: absolute;
@@ -3320,6 +3344,18 @@ font-weight: 800;
   margin: 56px 15px 37px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 10px 0 10px 30px; */
+    /* font-family: "Co Headline Corp", sans-serif; */
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    color: #013289;
+    /* white-space: nowrap; */
+    transition: 0.3s;
 }
 
 /* line 61, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_feature.scss */
@@ -3491,7 +3527,6 @@ font-weight: 800;
 
 /* line 61, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_skil_part.scss */
 .skil_part .skil_text .single_skil p {
-  font-family: "Anton", sans-serif;
   position: absolute;
   bottom: 15px;
 }
@@ -3583,7 +3618,6 @@ font-weight: 800;
 
 /* line 17, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_cta_area.scss */
 .cta_area .our_expesience p {
-  font-family: "Anton", sans-serif;
   font-size: 15px;
   line-height: 13px;
 }
@@ -3906,7 +3940,6 @@ font-weight: 800;
 .review_part h3 {
   font-size: 22px;
   font-weight: 500;
-  font-family: "Anton", sans-serif;
   margin-bottom: 4px;
 }
 

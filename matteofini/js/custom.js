@@ -55,8 +55,9 @@
     }
   });
 
-
+  console.log("SLIDERRRR");
   $('.slider').slick({
+    
     slidesToShow: 1,
     speed: 1000,
     infinite: true,
