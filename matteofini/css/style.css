@@ -3093,7 +3093,7 @@ font-weight: 800;
   width: 100%;
   height: 100%;
   top: 0;
-  background-image: url(../img/About_me.png);
+  background-image: url(../assets/img/bg-chi-sono.png);
   background-size: contain;
   background-position: right;
   content: "";
@@ -3361,6 +3361,15 @@ font-weight: 800;
 /* line 61, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_feature.scss */
 .feature_part .single_feature_part:hover {
   background-color: #f0f0f0;
+
+  padding: 50px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
 }
 
 /* line 63, ../../01 cl html template/03_jun 2019/181_Fitness Trainer_html/sass/_feature.scss */
@@ -5589,7 +5598,7 @@ h6 {
 }
 
 .breadcrumb_bg.about {
-  background-image: url("../img/breadcrumb1.jpg");
+  background-image: url("../assets/img/headers/header-about.png");
   box-shadow: inset 0 0 0 1000px rgba(1,75,122,.2);
 }
 
@@ -5678,3 +5687,56 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+  padding-left: 1.5rem
+}
+
+ul.timeline:before {
+  content: ' ';
+  background: #ededed;
+  display: inline-block;
+  position: absolute;
+  left: 16px;
+  width: 4px;
+  height: 100%;
+  z-index: 400;
+  border-radius: 1rem
+}
+
+ul.timeline:after {
+  content: ' ';
+  background: #fbd214;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 9px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  z-index: 400
+}
+
+li.timeline-item {
+  margin: 20px 0
+}
+
+li.timeline-item::before {
+  content: ' ';
+  background: #fbd214;
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  z-index: 400
+}
